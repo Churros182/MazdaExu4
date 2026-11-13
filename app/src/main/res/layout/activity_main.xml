@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:fillViewport="true">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mazda Calibration Files Android"
+        android:textColor="#00FFCC"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="8dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. Enlace directo SharePoint (.vbf)"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"/>
+
+    <EditText
+        android:id="@+id/etShareLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Pega el enlace de descarga aquí..."
+        android:textColor="#FFFFFF"
+        android:textColorHint="#777777"
+        android:textSize="12sp"
+        android:backgroundTint="#007ACC"/>
+
+    <EditText
+        android:id="@+id/etFileName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del archivo (ej. PE01-18881-A.vbf)"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#777777"
+        android:textSize="12sp"
+        android:backgroundTint="#007ACC"/>
+
+    <Button
+        android:id="@+id/btnDownload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descargar VBF a Memoria Interna"
+        android:backgroundTint="#007ACC"
+        android:textColor="#FFFFFF"/>
+
+    <Button
+        android:id="@+id/btnImportar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Importar VBF desde el teléfono"
+        android:backgroundTint="#2E7D32"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2. Calibraciones en el Celular (toca = elegir, mantén = borrar)"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:paddingTop="8dp"/>
+
+    <ListView
+        android:id="@+id/lvLocalFiles"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#1E1E1E"
+        android:divider="#333333"
+        android:dividerHeight="1dp"
+        android:choiceMode="singleChoice"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3. VIN del vehículo e información"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:paddingTop="8dp"/>
+
+    <EditText
+        android:id="@+id/etVin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="VIN (17 caracteres)"
+        android:inputType="textCapCharacters|textNoSuggestions"
+        android:maxLength="17"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#777777"
+        android:textSize="14sp"
+        android:backgroundTint="#007ACC"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnBuscarVin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:text="Buscar VIN"
+            android:backgroundTint="#007ACC"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnInfoArchivo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:text="Info del archivo"
+            android:backgroundTint="#007ACC"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="8dp">
+
+        <Button
+            android:id="@+id/btnConnectOBD"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:text="Vincular OBD"
+            android:backgroundTint="#FF8C00"
+            android:textColor="#000000"/>
+
+        <Button
+            android:id="@+id/btnFlashUDS"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:text="Flashear UDS"
+            android:backgroundTint="#D9534F"
+            android:textColor="#FFFFFF"
+            android:enabled="false"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Consola de Taller:"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:paddingTop="8dp"/>
+
+    <ScrollView
+        android:id="@+id/svConsole"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:nestedScrollingEnabled="true"
+        android:background="#000000"
+        android:padding="8dp">
+        <TextView
+            android:id="@+id/tvConsole"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="[Sistema] App lista.
+"
+            android:textColor="#00FF00"
+            android:fontFamily="monospace"
+            android:textIsSelectable="true"
+            android:textSize="11sp"/>
+    </ScrollView>
+
+</LinearLayout>
+</ScrollView>
